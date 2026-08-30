@@ -1,6 +1,6 @@
 pub mod helpers;
 pub mod closure;
-pub mod implement;
+pub mod matchtest;
 use std::io;
 
 
@@ -34,6 +34,11 @@ fn main() {
    //test_loop();
    //test_for();
    //test_closures();
+   matchtest::test_match_int();
+
+   matchtest::test_match_string();
+
+    matchtest::test_macth_array();
 
    let mut p1 = Person{
     first_name:"Elhadji".to_string(),
