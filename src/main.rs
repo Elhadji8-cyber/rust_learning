@@ -1,6 +1,21 @@
 pub mod helpers;
+pub mod closure;
+pub mod implement;
 use std::io;
 
+
+
+
+
+struct Person{
+    first_name: String,
+    last_name: String,
+}
+
+struct Game {
+    xbox: String,
+    playstation: String,
+}
 
 fn main() {
     println!("Hello, world!");
@@ -15,12 +30,55 @@ fn main() {
 
     //print!("The new age is:{0}", new_age);
    // test_if();
-   test_while();
-   test_loop();
-   test_for()
+   //test_while();
+   //test_loop();
+   //test_for();
+   //test_closures();
+
+   let mut p1 = Person{
+    first_name:"Elhadji".to_string(),
+    last_name:"Demba".to_string(),
+   };
+
+   p1.set_frist_name("Kojjo");
+   p1.set_last_name("Leuz");
+
+   println!(" my first name is:{} my last name is: {}", p1.first_name, p1.last_name);
+
+   let  p2 = Game{
+    xbox: "Call Of Duty".to_string(),
+    playstation:"Fifa 2026".to_string(),
+   }
+  
+  .with_xbox("MW4 Zodiac")
+  .with_playstation("World-Z");
+  println!("my favorit game is:{} and {}", p2.xbox, p2.playstation);
+
 }
 
+impl Game{
+    fn with_xbox(mut self, new_xbox:&str) -> Self{
+        self.xbox= new_xbox.to_string();
+        self
+    }
 
+    fn with_playstation(mut self, new_playstation: &str) -> Self{
+        self.playstation = new_playstation.to_string();
+        self
+    }
+}
+
+ impl Person{
+
+    fn set_frist_name(&mut self, new_first_name: &str){
+        self.first_name = new_first_name.to_string();
+    }
+
+    fn set_last_name(&mut self, new_last_name: &str){
+        self.last_name = new_last_name.to_string();
+    }
+}
+#[allow(dead_code)]
 fn test_for(){
 
 
@@ -36,6 +94,7 @@ fn test_for(){
         }
     }
 }
+#[allow(dead_code)]
 fn test_loop() {
 
     //x
@@ -49,7 +108,7 @@ fn test_loop() {
     x+=1;
    }
 }
-
+#[allow(dead_code)]
 fn test_while(){
   
 
