@@ -1,6 +1,7 @@
 pub mod helpers;
 pub mod closure;
 pub mod matchtest;
+pub mod option_test;
 use std::io;
 
 
@@ -34,6 +35,18 @@ fn main() {
    //test_loop();
    //test_for();
    //test_closures();
+   //let result = option_test::test_option_type();
+   //println!("{}",result.unwrap());
+
+   //let strresult = option_test::test_option_string();
+   //println!("{}",strresult.unwrap());
+
+   let charresult = option_test::test_option_charater();
+
+   println!("character type selected is: {}",charresult.unwrap().to_string());
+
+
+
    matchtest::test_match_int();
 
    matchtest::test_match_string();
